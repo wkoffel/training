@@ -3,7 +3,8 @@
 "name" : "installation",
 "version" : "1.0.0",
 "title" : "Installation",
-"description" : ""
+"description" : "",
+"freshnessDate" : 2016-02-10
 }
 -->
 
