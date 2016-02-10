@@ -34,6 +34,8 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+<!-- @section -->
+
 # Services
 From the [Kubernetes
 documentation](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/services.md):
@@ -163,6 +165,8 @@ substitute whatever service IP matches your environment):
 
 This is well and good, but what if I want to access this application from
 outside the OpenShift environment?
+
+<!-- @section -->
 
 # Routing
 The OpenShift routing tier is how FQDN-destined traffic enters the OpenShift
@@ -522,6 +526,8 @@ Hooray!
 
 *Note:* If you get a 503 error, wait a moment and try again. The router may not
 have picked up the info quite yet.
+
+<!-- @section -->
 
 # The Complete Pod-Service-Route
 The previous steps essentially build an "application" from scratch with lots of

@@ -40,6 +40,8 @@ using some sample code.  But, first, some housekeeping.
 Also, don't forget, the materials for these examples are in your
 `~/training/content` folder.
 
+<!-- @section -->
+
 ## Resources
 There are a number of different resource types in OpenShift 3, and, essentially,
 going through the motions of creating/destroying apps, scaling, building and
@@ -119,6 +121,8 @@ is displayed.
 **Note:** Once creating the quota, it can take a few moments for it to be fully
 processed. If you get blank output from the `get` or `describe` commands, wait a
 few moments and try again.
+
+<!-- @section -->
 
 ## Applying Limit Ranges to Projects
 In order for quotas to be effective you need to also create Limit Ranges
@@ -200,6 +204,8 @@ folder. Take a look at it, and you'll see something like the following:
 This configuration file has an authorization token, some information about where
 our server lives, our project, etc.
 
+<!-- @section -->
+
 ## Grab the Training Repo Again
 Since Joe and Alice can't access the training folder in root's home directory,
 go ahead and grab it inside Joe's home folder:
@@ -207,6 +213,8 @@ go ahead and grab it inside Joe's home folder:
     cd
     git clone https://github.com/openshift/training.git
     cd ~/training/content
+
+    <!-- @section -->
 
 ## The Hello World Definition JSON
 In the `training/content` folder, you can see a pod definition by using `cat`:
@@ -254,6 +262,8 @@ In the `training/content` folder, you can see a pod definition by using `cat`:
 In the simplest sense, a *pod* is an instance of something. If you are familiar
 with OpenShift V2 terminology, it is similar to a *gear*.  Reality is more
 complex, and we will learn more about the terms as we explore OpenShift further.
+
+<!-- @section -->
 
 ## Create the Pod
 As `joe`, to create the pod from our JSON file, execute the following:
@@ -354,6 +364,8 @@ shown in the `describe` output.
 You'll also notice that the pod landed on one of the *primary* nodes. Why is that?
 Because we had configured a default `nodeSelector` earlier during the set-up
 process.
+
+<!-- @section -->
 
 ## Examining the Created Pod
 Execute the following:
@@ -456,6 +468,8 @@ There are some interesting things in here now.
 
 Cool, right?
 
+<!-- @section -->
+
 ## Looking at the Pod in the Web Console
 Go to the web console and go to the *Overview* tab for the *OpenShift 3 Demo*
 project. You'll see some interesting things:
@@ -466,6 +480,8 @@ project. You'll see some interesting things:
     is using
 * You'll see that there's no service yet - we'll get to services soon.
 
+<!-- @section -->
+
 ## Quota Usage
 If you click on the *Settings* tab, you'll see our pod usage has increased to 1.
 
@@ -474,6 +490,8 @@ You can also use `oc` to determine the current quota usage of your project. As
 
     oc describe quota test-quota
 
+<!-- @section -->
+
 ## Review
 Take a moment to think about what this pod exercise really did -- it referenced
 an arbitrary Docker image, made sure to fetch it (if it wasn't present), and
@@ -481,6 +499,8 @@ then ran it. This could have just as easily been an application from an ISV
 available in a registry or something already written and built in-house.
 
 This is really powerful. We will explore using "arbitrary" docker images later.
+
+<!-- @section -->
 
 ## Default Project Templates
 While it's nice that an administrator can apply a quota and limits to a project,
@@ -509,6 +529,8 @@ your editor, and then restart the master:
 
     systemctl restart atomic-openshift-master
 
+<!-- @section -->
+
 ## Create a Project Via the Template
 As `joe`, go ahead and delete your `demo` project. We're going to recreate it in
 a moment:
@@ -532,6 +554,8 @@ does:
     oc get limitrange
 
 He should see that the project has both a quota and a limit range defined.
+
+<!-- @section -->
 
 ## Quota Enforcement
 Since we know we can run a pod directly, we'll go through a simple quota
