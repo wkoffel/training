@@ -1,0 +1,26 @@
+{
+  "olpVersion" : "0.5",
+
+  "paths" : [
+    {
+      "name" : "openshift-training",
+      "title" : "Getting Started with Openshift",
+      "description" : "This repository provides instructions for how to set up a basic OpenShift 3.X environment. It contains various examples of using OpenShift 3.X. The table of contents below provides links to the various chapters. The material operates under an expectation of a fairly specific setup. If your setup diverges significantly from this expected setup, you may need to make significant modifications to the material.",
+      "privacy" : "public",
+      "coverImage" : "http://cl.ly/0y253v1f392S/Image%202016-02-10%20at%2012.25.18%20PM.png",
+      "coverColor" : "#CF0000",
+      "pages" : [
+        {"module" : "requirements"},
+        {"module" : "installation"}
+      ]
+    }
+  ],
+
+  "modules" : [
+    {"olm" : "./01-Requirements-and-Preparation.md"},
+    {"olm" : "./02-Installation-and-Scheduler.md"}
+  ],
+
+  "assets" : [
+  ]
+}

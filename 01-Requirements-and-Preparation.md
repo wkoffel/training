@@ -1,3 +1,12 @@
+<!--
+{
+"name" : "requirements",
+"version" : "1.0.0",
+"title" : "Requirements and Preparation",
+"description" : ""
+}
+-->
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -18,6 +27,8 @@
   - [Useful OpenShift Logs](#useful-openshift-logs)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+<!-- @section -->
 
 # Architecture and Requirements
 ## Architecture
@@ -47,7 +58,7 @@ and the following configuration:
 * A free/unused partition with the remaining space
 
 The majority of storage requirements are related to Docker and etcd (the data
-store). 
+store).
 
 You will need to use subscription manager to both register your VMs, and attach
 them to the *OpenShift Enterprise* subscription.
@@ -75,6 +86,8 @@ Remember that NetworkManager may make changes to your DNS
 configuration/resolver/etc. You will need to properly configure your interfaces'
 DNS settings and/or configure NetworkManager appropriately. See the
 NetworkManager appendix for more information.
+
+<!-- @section -->
 
 # Preparing the Environment
 ## Use a Terminal Window Manager
@@ -223,4 +236,3 @@ window:
 
 **Note:** There is an appendix on configuring [Log
 Aggregation](#appendix---infrastructure-log-aggregation)
-

@@ -1,3 +1,12 @@
+<!--
+{
+"name" : "installation",
+"version" : "1.0.0",
+"title" : "Installation",
+"description" : ""
+}
+-->
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -23,6 +32,8 @@
   - [Tweak Default Project](#tweak-default-project)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+<!-- @section -->
 
 # Installation and Scheduler
 Much like with OpenShift Enterprise 2.x and prior, we provide an installation
@@ -56,9 +67,9 @@ As `root` in `/root`, go ahead and run the installer:
 You will see:
 
     Welcome to the OpenShift Enterprise 3 installation.
-    
+
     Please confirm that following prerequisites have been met:
-    
+
     * All systems where OpenShift will be installed are running Red Hat Enterprise
       Linux 7.
     * All systems are properly subscribed to the required OpenShift Enterprise 3
@@ -66,15 +77,15 @@ You will see:
     * All systems have run docker-storage-setup (part of the Red Hat docker RPM).
     * All systems have working DNS that resolves not only from the perspective of
       the installer but also from within the cluster.
-    
+
     When the process completes you will have a default configuration for Masters
     and Nodes.  For ongoing environment maintenance it's recommended that the
     official Ansible playbooks be used.
-    
+
     For more information on installation prerequisites please see:
     https://docs.openshift.com/enterprise/latest/admin_guide/install/prerequisites.html
-    
-    Are you ready to continue? [y/N]: 
+
+    Are you ready to continue? [y/N]:
 
 Press `y` to continue and hit enter.
 
@@ -86,8 +97,8 @@ prompt like:
     This installation process will involve connecting to remote hosts via ssh.  Any
     account may be used however if a non-root account is used it must have
     passwordless sudo access.
-    
-    User for ssh access [root]: 
+
+    User for ssh access [root]:
 
 Hit enter to continue.
 
@@ -114,7 +125,7 @@ Once you have entered the hosts correctly you should see should see the
 following summary:
 
     *** Installation Summary ***
-    
+
     Hosts:
     - ose3-master.example.com
       - OpenShift Master
@@ -124,10 +135,10 @@ following summary:
       - OpenShift Node (Dedicated)
     - ose3-node2.example.com
       - OpenShift Node (Dedicated)
-    
+
     Total OpenShift Masters: 1
     Total OpenShift Nodes: 3
-    
+
     NOTE: Add a total of 3 or more Masters to perform an HA installation.
 
 
@@ -144,21 +155,21 @@ should see something like the following:
     often the case that the hostname for a system inside the cluster is different
     from the hostname that is resolveable from command line or web clients
     these settings cannot be validated automatically.
-    
+
     For some cloud providers the installer is able to gather metadata exposed in
     the instance so reasonable defaults will be provided.
-    
+
     Plese confirm that they are correct before moving forward.
-    
-    
+
+
     192.168.133.2,192.168.133.2,ose3-master.example.com,ose3-master.example.com
     192.168.133.3,192.168.133.3,ose3-node1.example.com,ose3-node1.example.com
     192.168.133.4,192.168.133.4,ose3-node2.example.com,ose3-node2.example.com
-    
+
     Format:
-    
+
     IP,public IP,hostname,public hostname
-    
+
     Notes:
      * The installation host is the hostname from the installer's perspective.
      * The IP of the host should be the internal IP of the instance.
@@ -167,8 +178,8 @@ should see something like the following:
        themselves.
      * The public hostname should resolve to the external ip from hosts outside of
        the cloud.
-    
-    Do the above facts look correct? [y/N]: 
+
+    Do the above facts look correct? [y/N]:
 
 If you are installing in a cloud-like environment (AWS, OpenStack, etc), please
 take special note of the *Notes* section, as it contains very important details
@@ -181,30 +192,30 @@ Select `y` and press enter to continue.
 You will now see something like the following:
 
     Ready to run installation process.
-    
+
     If changes are needed to the values recorded by the installer please update /root/.config/openshift/installer.cfg.yml.
-    
-    Are you ready to continue? [y/N]: 
+
+    Are you ready to continue? [y/N]:
 
 Type `y` and hit enter to begin the installation. You will then see the
 installer do its work. At the end of the installation process, you should see
 something like the following:
 
-    PLAY RECAP ******************************************************************** 
+    PLAY RECAP ********************************************************************
     localhost                  : ok=10   changed=0    unreachable=0    failed=0   
     ose3-master.example.com    : ok=185  changed=54   unreachable=0    failed=0   
     ose3-node1.example.com     : ok=52   changed=20   unreachable=0    failed=0   
     ose3-node2.example.com     : ok=52   changed=20   unreachable=0    failed=0   
 
-    
+
     The installation was successful!
-    
+
     If this is your first time installing please take a look at the Administrator
     Guide for advanced options related to routing, storage, authentication and much
     more:
-    
+
     http://docs.openshift.com/enterprise/latest/admin_guide/overview.html
-    
+
     Press any key to continue ...
 
 Press any key to continue and exit the installer. You now have a working
@@ -220,6 +231,8 @@ following:
       subdomain: cloudapps.example.com
 
 Or modify it appropriately for your domain.
+
+<!-- @section -->
 
 # Regions and Zones
 If you think you're about to learn how to configure regions and zones in
@@ -460,4 +473,3 @@ at the same indentation level as the rest of the `openshift.io` items.
 
 From here we will start to deploy "applications" and other resources into
 OpenShift.
-
