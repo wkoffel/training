@@ -1,3 +1,13 @@
+<!--
+{
+"name" : "auth-projects-console",
+"version" : "1.0.0",
+"title" : "Auth, Projects, and the Web Console",
+"description" : "",
+"freshnessDate" : 2016-02-10
+}
+-->
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -10,6 +20,9 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Auth, Projects, and the Web Console
+
+<!-- @section -->
+
 ## Configuring htpasswd Authentication
 ** TODO: Does the quick installer do this? **
 OpenShift v3 supports a number of mechanisms for authentication. The simplest
@@ -49,6 +62,8 @@ Restart your master once you have edited the config:
 
     systemctl restart atomic-openshift-master
 
+<!-- @section -->
+
 ## A Project for Everything
 V3 has a concept of "projects" to contain a number of different resources:
 services and their pods, builds and so on. They are somewhat similar to
@@ -79,6 +94,8 @@ order for things to land in the right place.
 Now that you have a project created, it's time to look at the web console, which
 has been completely redesigned for V3.
 
+<!-- @section -->
+
 ## Web Console
 Open your browser and visit the following URL:
 
@@ -95,5 +112,3 @@ the password (`redhat`) you set earlier.
 Once you are in, click the *OpenShift 3 Demo* project. There really isn't
 anything of interest at the moment, because we haven't put anything into our
 project.
-
-

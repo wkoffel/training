@@ -1,3 +1,13 @@
+<!--
+{
+"name" : "services-routing",
+"version" : "1.0.0",
+"title" : "Services Routing",
+"description" : "",
+"freshnessDate" : 2016-02-10
+}
+-->
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -89,7 +99,7 @@ and that is where the routing tier comes in.
 ## Creating a Service
 We can create a service from the command line with JSON or YAML just like we
 created the pod. The `hello-service.json` file has the service definition we saw
-above. 
+above.
 
 As `joe`, go ahead and create the service:
 
@@ -348,7 +358,7 @@ Well, we just created that, and it's called `router`, so let's try again:
 Just about every form of communication with OpenShift components is secured by
 SSL and uses various certificates and authentication methods. The installer
 created a `~/.kube/config` file which contains the credentials for the user
-account `system:admin` (the cluster administrator) to use to access the API. 
+account `system:admin` (the cluster administrator) to use to access the API.
 But `oadm router` is asking us what credentials the *router* should use to
 communicate with the master.
 
@@ -375,7 +385,7 @@ If this works, you'll see some output:
     password for stats user admin has been set to xMH727koMO
     DeploymentConfig "router" created
     Service "router" created
- 
+
 **Note:** You will have to reference the absolute path of the PEM file if you
 did not run this command in the folder where you created it.
 
@@ -384,7 +394,7 @@ looking at the DeploymentConfiguration later. Don't worry.
 
 Let's check the pods as `root`:
 
-    oc get pods 
+    oc get pods
 
 In the output, you should see the router pod status change to "running" after a
 few moments (it may take up to a few minutes):
@@ -411,7 +421,7 @@ If you `describe` the router pod, you will see that it is running on the master:
         Restart Count:      0
     Conditions:
       Type          Status
-      Ready         True 
+      Ready         True
     Events:
       FirstSeen     LastSeen        Count   From                                    SubobjectPath           Reason           Message
       ─────────     ────────        ─────   ────                                    ─────────────           ──────           ───────
@@ -468,7 +478,7 @@ admins or application developers.
 
 Ensure that port 1936 is accessible and visit:
 
-    http://admin:$YOURPASSWORDHERE@ose3-master.example.com:1936 
+    http://admin:$YOURPASSWORDHERE@ose3-master.example.com:1936
 
 to view your router stats.
 
@@ -684,7 +694,7 @@ If we work from the route down to the pod:
     `name=hello-openshift-label`
 
 If your domain is different, you will need to edit the JSON before trying to
-create the objects. 
+create the objects.
 
 You might be wondering what the `DeploymentConfig` object is. We'll get to it
 soon.
@@ -718,12 +728,12 @@ common resources existing in the current project:
     oc status
 
     In project OpenShift 3 Demo (demo) on server https://ose3-master.example.com:8443
-    
+
     svc/hello-openshift-service - 172.30.40.240:27017 -> 8080
-      dc/hello-openshift deploys docker.io/openshift/hello-openshift:v1.0.6 
+      dc/hello-openshift deploys docker.io/openshift/hello-openshift:v1.0.6
         #1 deployed about a minute ago - 1 pod
       exposed by route/hello-openshift-route
-    
+
     To see more, use 'oc describe <resource>/<name>'.
     You can use 'oc get all' to see a list of other objects.
 

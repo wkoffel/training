@@ -1,3 +1,13 @@
+<!--
+{
+"name" : "hello-world",
+"version" : "1.0.0",
+"title" : "Hello World",
+"description" : "",
+"freshnessDate" : 2016-02-10
+}
+-->
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -294,7 +304,7 @@ To find out more information about this pod, use `describe`:
         Environment Variables:
     Conditions:
       Type          Status
-      Ready         True 
+      Ready         True
     Volumes:
       default-token-x51tv:
         Type:       Secret (a secret that should populate this volume)
@@ -434,7 +444,7 @@ You should see something like:
       podIP: 10.1.1.2
       startTime: 2015-11-06T19:14:01Z
 
-There are some interesting things in here now. 
+There are some interesting things in here now.
 
 * We didn't specify a `nodeSelector` in our pod definition, but it's there now.
   * This is because OpenShift is configured with a default.
@@ -505,12 +515,12 @@ a moment:
 
 Now, wait a few moments (until the project no longer shows up in the output of
 `oc get projects`) and then re-create the `demo` project. This time we will
-create the project as the `joe` user (last time the admin did it). 
+create the project as the `joe` user (last time the admin did it).
 
 As `joe`:
 
     oc new-project demo --display-name="OpenShift 3 Demo" \
-    --description="This is the first demo project with OpenShift v3" 
+    --description="This is the first demo project with OpenShift v3"
 
 Since it is not disabled, any user can create a project, and that project will
 inherit the default project template. This template now has a quota, so if `joe`
@@ -529,7 +539,7 @@ fourth, because the quota on this project limits us to three total pods.
 
 As `joe`, go ahead and use `oc create` and you will see the following:
 
-    oc create -f ~/training/content/hello-quota.json 
+    oc create -f ~/training/content/hello-quota.json
     pods/hello-openshift-1
     pods/hello-openshift-2
     pods/hello-openshift-3
