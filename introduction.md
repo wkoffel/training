@@ -1,3 +1,5 @@
+# Welcome to OpenShift Training
+
 OpenShift is a platform as a service product from Red Hat.
 
 The software that runs the service is open-sourced under the name **OpenShift Origin**, and is available on GitHub. Developers can use Git to deploy web applications in different languages on the platform. A version for cloud computing is named **OpenShift Enterprise**.
