@@ -10,6 +10,7 @@
       "coverImage" : "http://cl.ly/0y253v1f392S/Image%202016-02-10%20at%2012.25.18%20PM.png",
       "coverColor" : "#CF0000",
       "pages" : [
+        {"page" : "./introduction.md"},
         {"module" : "requirements"},
         {"module" : "installation"},
         {"module" : "auth-projects-console"},
